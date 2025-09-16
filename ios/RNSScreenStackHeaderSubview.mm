@@ -161,6 +161,10 @@ RNS_IGNORE_SUPER_CALL_BEGIN
         self);
   } else {
     self.bounds = CGRect{CGPointZero, frame.size};
+    
+    [self.widthAnchor constraintEqualToConstant:frame.size.width].active = YES;
+    [self.heightAnchor constraintEqualToConstant:frame.size.height].active = YES;
+    
     [self layoutNavigationBar];
   }
 }
